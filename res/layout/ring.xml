@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <TextView
+        android:id="@+id/incoming_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#80FFFFFF"
+        android:layout_gravity="bottom"
+        android:singleLine="true"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textSize="12sp" 
+        android:textIsSelectable="false"/>
+    
+    <VideoView
+        android:id="@+id/call_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:screenOrientation="landscape" >
+    </VideoView>
+    
+</FrameLayout>
