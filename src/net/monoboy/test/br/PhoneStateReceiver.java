@@ -53,7 +53,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 				try {
 				    sleep(1000);
 				} catch (InterruptedException e) {
-				    e.printStackTrace();
+				    // ignore
 				} finally {
 				    newRingIntent.putExtra("incoming", incomingPhoneNumber);
 				    ctx.getApplicationContext().startActivity(newRingIntent);
