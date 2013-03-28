@@ -25,7 +25,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 		telephonyManager.listen(myBellPhoneStateListener, PhoneStateListener.LISTEN_SERVICE_STATE);
 		telephonyManager.listen(myBellPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
 		
-		Log.d("K5", intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));
+		Log.d("vier", intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));
 		
 		if (TelephonyManager.CALL_STATE_RINGING == telephonyManager.getCallState()) {
 			callRingActivity(ctx, intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));
