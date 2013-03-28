@@ -2,7 +2,6 @@ package net.monoboy.test.br;
 
 import net.monoboy.test.service.StartupService_;
 
-import com.googlecode.androidannotations.annotations.EBean;
 import com.googlecode.androidannotations.annotations.EReceiver;
 
 import android.content.BroadcastReceiver;
