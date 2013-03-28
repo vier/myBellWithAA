@@ -14,8 +14,9 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int call_video=0x7f070001;
-        public static final int incoming_info=0x7f070000;
+        public static final int call_video=0x7f070002;
+        public static final int incoming_info=0x7f070001;
+        public static final int init_video=0x7f070000;
     }
     public static final class layout {
         public static final int main=0x7f030000;

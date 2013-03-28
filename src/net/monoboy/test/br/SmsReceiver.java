@@ -1,7 +1,6 @@
 package net.monoboy.test.br;
 
 import com.googlecode.androidannotations.annotations.EReceiver;
-import com.googlecode.androidannotations.annotations.UiThread;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -34,15 +33,9 @@ public class SmsReceiver extends BroadcastReceiver {
 
 				messages += "SMS from " + address + " :\n";
 				messages += body + "\n";
-
-				showSMS(context, messages);
 			}
+			
+			Toast.makeText(context, messages, Toast.LENGTH_SHORT).show();
 		}
 	}
-
-	@UiThread
-	public void showSMS(Context context, String messages) {
-		Toast.makeText(context, messages, Toast.LENGTH_SHORT).show();
-	}
-
 }

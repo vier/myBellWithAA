@@ -7,15 +7,12 @@ package net.monoboy.test.br;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import android.util.Log;
 
 public final class SmsReceiver_
     extends SmsReceiver
 {
 
     private Context context_;
-    private Handler handler_ = new Handler();
 
     private void init_() {
     }
@@ -25,24 +22,6 @@ public final class SmsReceiver_
         context_ = context;
         init_();
         super.onReceive(context, intent);
-    }
-
-    @Override
-    public void showSMS(final Context context, final String messages) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                try {
-                    SmsReceiver_.super.showSMS(context, messages);
-                } catch (RuntimeException e) {
-                    Log.e("SmsReceiver_", "A runtime exception was thrown while executing code in a runnable", e);
-                }
-            }
-
-        }
-        );
     }
 
 }

@@ -8,7 +8,6 @@ import com.googlecode.androidannotations.annotations.Fullscreen;
 import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.ViewById;
 
-import android.app.Activity;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -22,7 +21,7 @@ import android.widget.VideoView;
 @EActivity(R.layout.ring)
 @NoTitle
 @Fullscreen
-public class RingActivity extends Activity {
+public class RingActivity extends BaseActivity {
 	@ViewById(R.id.incoming_info)
 	TextView incomingInfoTextView;
 	
