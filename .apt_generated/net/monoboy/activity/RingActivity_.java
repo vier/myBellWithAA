@@ -37,8 +37,8 @@ public final class RingActivity_
     }
 
     private void afterSetContentView_() {
-        incomingInfoTextView = ((TextView) findViewById(id.incoming_info));
         myVideoView = ((VideoView) findViewById(id.call_video));
+        incomingInfoTextView = ((TextView) findViewById(id.incoming_info));
         updateContents();
     }
 
