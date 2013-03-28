@@ -34,7 +34,7 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Transparent" />
 
-        <receiver android:name=".PhoneStateReceiver_" >
+        <receiver android:name=".br.PhoneStateReceiver_" >
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
                 <category android:name="android.intent.category.HOME"/>
