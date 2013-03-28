@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package net.monoboy.test;
+package net.monoboy;
 
 public final class R {
     public static final class attr {

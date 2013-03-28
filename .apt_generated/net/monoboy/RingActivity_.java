@@ -3,7 +3,7 @@
 //
 
 
-package net.monoboy.test;
+package net.monoboy;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,8 +15,8 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.VideoView;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
-import net.monoboy.test.R.id;
-import net.monoboy.test.R.layout;
+import net.monoboy.R.id;
+import net.monoboy.R.layout;
 
 public final class RingActivity_
     extends RingActivity

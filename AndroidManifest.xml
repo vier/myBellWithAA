@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.monoboy.test"
+    package="net.monoboy"
     android:versionCode="15"
     android:versionName="1.0.0" >
 
@@ -21,7 +21,7 @@
         android:label="@string/app_name" 
         android:allowBackup="true">
         <activity
-            android:name=".MainActivity_"
+            android:name="net.monoboy.MainActivity_"
             android:theme="@style/Theme.Transparent" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RingActivity_"
+            android:name="net.monoboy.RingActivity_"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Transparent" />

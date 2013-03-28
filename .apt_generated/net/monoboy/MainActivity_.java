@@ -3,7 +3,7 @@
 //
 
 
-package net.monoboy.test;
+package net.monoboy;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.VideoView;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
-import net.monoboy.test.R.id;
-import net.monoboy.test.R.layout;
+import net.monoboy.R.id;
+import net.monoboy.R.layout;
 
 public final class MainActivity_
     extends MainActivity

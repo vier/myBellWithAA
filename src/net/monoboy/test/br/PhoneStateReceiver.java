@@ -1,6 +1,6 @@
 package net.monoboy.test.br;
 
-import net.monoboy.test.RingActivity_;
+import net.monoboy.RingActivity_;
 
 import com.googlecode.androidannotations.annotations.EReceiver;
 import com.googlecode.androidannotations.annotations.SystemService;

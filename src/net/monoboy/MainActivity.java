@@ -1,4 +1,6 @@
-package net.monoboy.test;
+package net.monoboy;
+
+import net.monoboy.R;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Background;

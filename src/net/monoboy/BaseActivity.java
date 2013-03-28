@@ -1,5 +1,6 @@
-package net.monoboy.test;
+package net.monoboy;
 
+import net.monoboy.MainActivity_;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
