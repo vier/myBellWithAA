@@ -4,9 +4,14 @@ import android.util.Log;
 
 import com.loopj.android.http.*;
 
+/**
+ * 
+ * @see https://github.com/AsyncHttpClient/async-http-client
+ *
+ */
 public class HttpClient {
 	
-	private static AsyncHttpClient httpClient = new AsyncHttpClient();
+	protected static AsyncHttpClient httpClient = new AsyncHttpClient();
 	
 	public static void get(String url, RequestParams params, AsyncHttpResponseHandler responseHandler) {
 		httpClient.get(url, params, responseHandler);

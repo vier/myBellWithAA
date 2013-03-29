@@ -2,7 +2,7 @@ package net.monoboy.activity;
 
 import net.monoboy.R;
 import net.monoboy.constant.FlurryConstant;
-import net.monoboy.core.GlobalHolder;
+import net.monoboy.core.FlurryHttpClient;
 import net.monoboy.core.HttpClient;
 
 import com.flurry.android.FlurryAgent;
@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         
         Log.d("vier", "onCreate");
-        HttpClient.getDummyHttpResponse();
+        FlurryHttpClient.getActiveUser(null, null);
     }
     
 	@Override
