@@ -8,6 +8,7 @@ package net.monoboy.br;
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
+import android.view.WindowManager;
 
 public final class PhoneStateReceiver_
     extends PhoneStateReceiver
@@ -16,6 +17,7 @@ public final class PhoneStateReceiver_
     private Context context_;
 
     private void init_() {
+        windowManager = ((WindowManager) context_.getSystemService(Context.WINDOW_SERVICE));
         telephonyManager = ((TelephonyManager) context_.getSystemService(Context.TELEPHONY_SERVICE));
     }
 

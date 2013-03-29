@@ -48,15 +48,7 @@ public class RingActivity extends BaseActivity {
 		setVideoOnBackground();
 		
 		incomingInfoTextView.setText(incomingPhoneNumber);
-		myVideoView.requestFocus();
-		myVideoView.start();
-	}
-	
-	@Background
-	void setVideoOnBackground() {
-		Uri defaultVideofile = Uri.parse("android.resource://" + this.getPackageName() + "/raw/a");
-	    myVideoView.setVideoURI(defaultVideofile);
-	    
+		
 	    myVideoView.setMediaController(new MediaController(this));
 
 		myVideoView.setOnPreparedListener(new OnPreparedListener() {
@@ -65,5 +57,14 @@ public class RingActivity extends BaseActivity {
 		    	mp.setLooping(true);
 		    }
 		});
+		
+		myVideoView.requestFocus();
+		myVideoView.start();
+	}
+	
+	@Background
+	void setVideoOnBackground() {
+		Uri defaultVideofile = Uri.parse("android.resource://" + this.getPackageName() + "/raw/a");
+	    myVideoView.setVideoURI(defaultVideofile);
 	}
 }
