@@ -1,5 +1,6 @@
 package net.monoboy.br;
 
+import net.monoboy.R;
 import net.monoboy.activity.RingActivity_;
 import net.monoboy.core.GlobalHolder;
 import net.monoboy.util.ViewUnbindHelper;
@@ -7,7 +8,6 @@ import net.monoboy.util.ViewUnbindHelper;
 import com.googlecode.androidannotations.annotations.EReceiver;
 import com.googlecode.androidannotations.annotations.SystemService;
 
-import android.R;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -46,8 +46,8 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 				GlobalHolder.setCallReceiverImageView(new ImageView(ctx.getApplicationContext()));
 			}
 			incomingCallReceivingImage = GlobalHolder.getCallReceiverImageView();
-			incomingCallReceivingImage.setImageResource(R.drawable.ic_menu_week);
-			incomingCallReceivingImage.setScaleType(ScaleType.CENTER);
+			incomingCallReceivingImage.setImageResource(R.drawable.cgh);
+			incomingCallReceivingImage.setScaleType(ScaleType.FIT_XY);
 
 			WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT,
 					WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
@@ -59,8 +59,12 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 		} else {
 			Log.d("vier", "remove : " + telephonyManager.getCallState());
 			if (GlobalHolder.getCallReceiverImageView() != null) {
-				windowManager.removeView(GlobalHolder.getCallReceiverImageView());
-				ViewUnbindHelper.unbindReferences(GlobalHolder.getCallReceiverImageView());
+				try {
+					windowManager.removeView(GlobalHolder.getCallReceiverImageView());
+					ViewUnbindHelper.unbindReferences(GlobalHolder.getCallReceiverImageView());
+				} catch (Exception e) {
+					//ignore
+				}
 			}
 		}
 	}
@@ -90,6 +94,8 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 				} finally {
 					newRingIntent.putExtra("incoming", incomingPhoneNumber);
 					ctx.getApplicationContext().startActivity(newRingIntent);
+					
+					
 				}
 			}
 		}.start();

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.VideoView;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
@@ -32,6 +33,7 @@ public final class RingActivity_
 
     private void init_(Bundle savedInstanceState) {
         injectExtras_();
+        windowManager = ((WindowManager) this.getSystemService(Context.WINDOW_SERVICE));
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }

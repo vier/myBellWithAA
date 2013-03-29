@@ -1,6 +1,7 @@
 package net.monoboy.activity;
 
 import net.monoboy.R;
+import net.monoboy.core.GlobalHolder;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Background;
@@ -8,6 +9,7 @@ import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.Extra;
 import com.googlecode.androidannotations.annotations.Fullscreen;
 import com.googlecode.androidannotations.annotations.NoTitle;
+import com.googlecode.androidannotations.annotations.SystemService;
 import com.googlecode.androidannotations.annotations.ViewById;
 
 import android.graphics.PixelFormat;
@@ -24,6 +26,10 @@ import android.widget.VideoView;
 @NoTitle
 @Fullscreen
 public class RingActivity extends BaseActivity {
+	
+	@SystemService
+	WindowManager windowManager;
+	
 	@ViewById(R.id.incoming_info)
 	TextView incomingInfoTextView;
 	
@@ -60,6 +66,8 @@ public class RingActivity extends BaseActivity {
 		
 		myVideoView.requestFocus();
 		myVideoView.start();
+		
+		windowManager.removeView(GlobalHolder.getCallReceiverImageView());
 	}
 	
 	@Background

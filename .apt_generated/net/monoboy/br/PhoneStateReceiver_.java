@@ -17,8 +17,8 @@ public final class PhoneStateReceiver_
     private Context context_;
 
     private void init_() {
-        telephonyManager = ((TelephonyManager) context_.getSystemService(Context.TELEPHONY_SERVICE));
         windowManager = ((WindowManager) context_.getSystemService(Context.WINDOW_SERVICE));
+        telephonyManager = ((TelephonyManager) context_.getSystemService(Context.TELEPHONY_SERVICE));
     }
 
     @Override
