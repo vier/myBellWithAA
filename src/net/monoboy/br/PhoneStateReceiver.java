@@ -29,7 +29,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 	@SystemService
 	WindowManager windowManager;
 	
-	ImageView iv;
+	private ImageView incomingCallReceivingImage;
 
 	@Override
 	public void onReceive(Context ctx, Intent intent) {
@@ -44,15 +44,15 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 			if (GlobalHolder.getCallReceiverImageView() == null) {
 				GlobalHolder.setCallReceiverImageView(new ImageView(ctx.getApplicationContext()));
 			}
-			iv = GlobalHolder.getCallReceiverImageView();
-			iv.setImageResource(R.drawable.ic_menu_week);
-			iv.setScaleType(ScaleType.CENTER);
+			incomingCallReceivingImage = GlobalHolder.getCallReceiverImageView();
+			incomingCallReceivingImage.setImageResource(R.drawable.ic_menu_week);
+			incomingCallReceivingImage.setScaleType(ScaleType.CENTER);
 
 			WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT,
 					WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
 					WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, PixelFormat.TRANSLUCENT);
 			params.gravity = Gravity.TOP | Gravity.RIGHT;
-			windowManager.addView(iv, params);
+			windowManager.addView(incomingCallReceivingImage, params);
 
 			callRingActivity(ctx,intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));
 		} else {
