@@ -2,6 +2,7 @@ package net.monoboy.br;
 
 import net.monoboy.activity.RingActivity_;
 import net.monoboy.core.GlobalHolder;
+import net.monoboy.util.ViewUnbindHelper;
 
 import com.googlecode.androidannotations.annotations.EReceiver;
 import com.googlecode.androidannotations.annotations.SystemService;
@@ -59,6 +60,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 			Log.d("vier", "remove : " + telephonyManager.getCallState());
 			if (GlobalHolder.getCallReceiverImageView() != null) {
 				windowManager.removeView(GlobalHolder.getCallReceiverImageView());
+				ViewUnbindHelper.unbindReferences(GlobalHolder.getCallReceiverImageView());
 			}
 		}
 	}
