@@ -4,7 +4,7 @@ import android.widget.ImageView;
 
 public class GlobalHolder {
 	private static ImageView callReceiverImageView;
-
+	
 	public static ImageView getCallReceiverImageView() {
 		return callReceiverImageView;
 	}

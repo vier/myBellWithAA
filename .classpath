@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="libs/androidannotations-api-2.7.1.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="libs/android-async-http-1.4.3.jar"/>
+	<classpathentry kind="lib" path="libs/FlurryAgent.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

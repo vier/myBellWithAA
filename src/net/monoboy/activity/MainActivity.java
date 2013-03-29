@@ -1,7 +1,11 @@
 package net.monoboy.activity;
 
 import net.monoboy.R;
+import net.monoboy.constant.FlurryConstant;
+import net.monoboy.core.GlobalHolder;
+import net.monoboy.core.HttpClient;
 
+import com.flurry.android.FlurryAgent;
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -11,6 +15,7 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -21,14 +26,33 @@ public class MainActivity extends BaseActivity {
 	@ViewById(R.id.init_video)
 	VideoView introVideoView;
 	
+	@Override
+	protected void onStart() {
+		super.onStart();
+
+		FlurryAgent.setUseHttps(true);
+		FlurryAgent.setReportLocation(false);
+		FlurryAgent.onStartSession(this, FlurryConstant.FLURRY_LOGGING_API_KEY);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		FlurryAgent.onEndSession(this);
+	}
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        Log.d("vier", "onCreate");
+        HttpClient.getDummyHttpResponse();
     }
     
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		this.finish();
+		  
 		System.exit(0);
 		return true;
 	}
@@ -56,6 +80,5 @@ public class MainActivity extends BaseActivity {
 			mp.setLooping(true);
 		}
 	}
-
 }
 

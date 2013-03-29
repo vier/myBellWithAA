@@ -31,8 +31,7 @@ public abstract class BaseActivity extends Activity {
 		StrictMode.setThreadPolicy(builder.build());
 
 		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-				.detectLeakedSqlLiteObjects().detectActivityLeaks() // api level
-																	// 11
+				.detectLeakedSqlLiteObjects().detectActivityLeaks() // api level // 11
 				.detectLeakedClosableObjects() // api level 11
 				.setClassInstanceLimit(MainActivity_.class, 1) // api level 11
 				.penaltyLog().penaltyDeath().penaltyDropBox().build());
