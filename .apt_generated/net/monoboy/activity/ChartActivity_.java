@@ -5,22 +5,19 @@
 
 package net.monoboy.activity;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.TextView;
-import android.widget.VideoView;
-import com.googlecode.androidannotations.api.BackgroundExecutor;
-import net.monoboy.R.id;
+import android.view.ViewGroup.LayoutParams;
 import net.monoboy.R.layout;
 
-public final class RingActivity_
-    extends RingActivity
+public final class ChartActivity_
+    extends ChartActivity
 {
 
 
@@ -28,20 +25,15 @@ public final class RingActivity_
     public void onCreate(Bundle savedInstanceState) {
         init_(savedInstanceState);
         super.onCreate(savedInstanceState);
-        setContentView(layout.ring);
+        setContentView(layout.chart_main);
     }
 
     private void init_(Bundle savedInstanceState) {
         injectExtras_();
-        windowManager = ((WindowManager) this.getSystemService(Context.WINDOW_SERVICE));
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     private void afterSetContentView_() {
-        incomingInfoTextView = ((TextView) findViewById(id.incoming_info));
-        myVideoView = ((VideoView) findViewById(id.call_video));
-        updateContents();
+        setupChart();
     }
 
     @Override
@@ -51,7 +43,7 @@ public final class RingActivity_
     }
 
     @Override
-    public void setContentView(View view, android.view.ViewGroup.LayoutParams params) {
+    public void setContentView(View view, LayoutParams params) {
         super.setContentView(view, params);
         afterSetContentView_();
     }
@@ -62,8 +54,8 @@ public final class RingActivity_
         afterSetContentView_();
     }
 
-    public static RingActivity_.IntentBuilder_ intent(Context context) {
-        return new RingActivity_.IntentBuilder_(context);
+    public static ChartActivity_.IntentBuilder_ intent(Context context) {
+        return new ChartActivity_.IntentBuilder_(context);
     }
 
     @SuppressWarnings("unchecked")
@@ -75,11 +67,18 @@ public final class RingActivity_
         Intent intent_ = getIntent();
         Bundle extras_ = intent_.getExtras();
         if (extras_!= null) {
-            if (extras_.containsKey("incoming")) {
+            if (extras_.containsKey("userCount")) {
                 try {
-                    incomingPhoneNumber = cast_(extras_.get("incoming"));
+                    userCounts = cast_(extras_.get("userCount"));
                 } catch (ClassCastException e) {
-                    Log.e("RingActivity_", "Could not cast extra to expected type, the field is left to its default value", e);
+                    Log.e("ChartActivity_", "Could not cast extra to expected type, the field is left to its default value", e);
+                }
+            }
+            if (extras_.containsKey("date")) {
+                try {
+                    dates = cast_(extras_.get("date"));
+                } catch (ClassCastException e) {
+                    Log.e("ChartActivity_", "Could not cast extra to expected type, the field is left to its default value", e);
                 }
             }
         }
@@ -91,24 +90,6 @@ public final class RingActivity_
         injectExtras_();
     }
 
-    @Override
-    public void setVideoOnBackground() {
-        BackgroundExecutor.execute(new Runnable() {
-
-
-            @Override
-            public void run() {
-                try {
-                    RingActivity_.super.setVideoOnBackground();
-                } catch (RuntimeException e) {
-                    Log.e("RingActivity_", "A runtime exception was thrown while executing code in a runnable", e);
-                }
-            }
-
-        }
-        );
-    }
-
     public static class IntentBuilder_ {
 
         private Context context_;
@@ -116,14 +97,14 @@ public final class RingActivity_
 
         public IntentBuilder_(Context context) {
             context_ = context;
-            intent_ = new Intent(context, RingActivity_.class);
+            intent_ = new Intent(context, ChartActivity_.class);
         }
 
         public Intent get() {
             return intent_;
         }
 
-        public RingActivity_.IntentBuilder_ flags(int flags) {
+        public ChartActivity_.IntentBuilder_ flags(int flags) {
             intent_.setFlags(flags);
             return this;
         }
@@ -140,8 +121,13 @@ public final class RingActivity_
             }
         }
 
-        public RingActivity_.IntentBuilder_ incomingPhoneNumber(String incomingPhoneNumber) {
-            intent_.putExtra("incoming", incomingPhoneNumber);
+        public ChartActivity_.IntentBuilder_ userCounts(ArrayList<Integer> userCounts) {
+            intent_.putExtra("userCount", ((Serializable) userCounts));
+            return this;
+        }
+
+        public ChartActivity_.IntentBuilder_ dates(ArrayList<Integer> dates) {
+            intent_.putExtra("date", ((Serializable) dates));
             return this;
         }
 

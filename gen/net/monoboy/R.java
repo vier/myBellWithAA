@@ -31,15 +31,17 @@ containing a value of this type.
         public static final int icon=0x7f020001;
     }
     public static final class id {
-        public static final int button1=0x7f070000;
-        public static final int call_video=0x7f070003;
-        public static final int incoming_info=0x7f070002;
-        public static final int init_video=0x7f070001;
+        public static final int button1=0x7f070001;
+        public static final int call_video=0x7f070004;
+        public static final int chart=0x7f070000;
+        public static final int incoming_info=0x7f070003;
+        public static final int init_video=0x7f070002;
     }
     public static final class layout {
-        public static final int custom_dialog=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int ring=0x7f030002;
+        public static final int chart_main=0x7f030000;
+        public static final int custom_dialog=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int ring=0x7f030003;
     }
     public static final class raw {
         public static final int a=0x7f040000;
