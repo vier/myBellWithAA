@@ -32,6 +32,7 @@ public class ChartActivity extends BaseActivity {
     @Extra("date")
     ArrayList<Integer> dates;
     
+
     private void initChart() {
         mCurrentSeries = new XYSeries("Sample Data");
         mDataset.addSeries(mCurrentSeries);

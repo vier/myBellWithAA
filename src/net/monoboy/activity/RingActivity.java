@@ -2,6 +2,7 @@ package net.monoboy.activity;
 
 import net.monoboy.R;
 import net.monoboy.core.GlobalHolder;
+import net.monoboy.view.IncomingCallInfoDialog;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Background;
@@ -12,11 +13,13 @@ import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.SystemService;
 import com.googlecode.androidannotations.annotations.ViewById;
 
+import android.annotation.SuppressLint;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -49,6 +52,12 @@ public class RingActivity extends BaseActivity {
 		getWindow().setFormat(PixelFormat.TRANSPARENT);
     }
 	
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		showDailog();
+		return true;
+	}
+	
 	@AfterViews
 	void updateContents() {
 		setVideoOnBackground();
@@ -74,5 +83,12 @@ public class RingActivity extends BaseActivity {
 	void setVideoOnBackground() {
 		Uri defaultVideofile = Uri.parse("android.resource://" + this.getPackageName() + "/raw/a");
 	    myVideoView.setVideoURI(defaultVideofile);
+	}
+	
+	@SuppressLint("NewApi")
+	private void showDailog() {
+		final IncomingCallInfoDialog incomingCallInfoDialog = new IncomingCallInfoDialog();
+		
+		incomingCallInfoDialog.show(this.getFragmentManager(), null);
 	}
 }

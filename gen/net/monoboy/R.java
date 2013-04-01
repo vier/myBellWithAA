@@ -32,22 +32,35 @@ containing a value of this type.
     }
     public static final class id {
         public static final int button1=0x7f070001;
-        public static final int call_video=0x7f070004;
+        public static final int call_video=0x7f07000d;
         public static final int chart=0x7f070000;
-        public static final int incoming_info=0x7f070003;
-        public static final int init_video=0x7f070002;
+        public static final int custom_dialog_fragment_body=0x7f070006;
+        public static final int custom_dialog_fragment_button_layout=0x7f070007;
+        public static final int custom_dialog_fragment_negative=0x7f070008;
+        public static final int custom_dialog_fragment_neutral=0x7f070009;
+        public static final int custom_dialog_fragment_positive=0x7f07000a;
+        public static final int custom_dialog_fragment_title_divider=0x7f070005;
+        public static final int custom_dialog_fragment_title_layout=0x7f070002;
+        public static final int custom_dialog_title=0x7f070003;
+        public static final int custom_dialog_title_widget=0x7f070004;
+        public static final int incoming_info=0x7f07000c;
+        public static final int init_video=0x7f07000b;
     }
     public static final class layout {
         public static final int chart_main=0x7f030000;
         public static final int custom_dialog=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int ring=0x7f030003;
+        public static final int custom_dialog_alert_message=0x7f030002;
+        public static final int custom_dialog_fragment=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int ring=0x7f030005;
     }
     public static final class raw {
         public static final int a=0x7f040000;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
+        public static final int custom_dialog_cancel_button_text=0x7f050003;
+        public static final int custom_dialog_ok_button_text=0x7f050002;
         public static final int hello=0x7f050000;
     }
     public static final class style {
