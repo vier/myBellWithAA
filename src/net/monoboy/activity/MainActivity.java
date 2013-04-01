@@ -3,7 +3,7 @@ package net.monoboy.activity;
 import net.monoboy.R;
 import net.monoboy.constant.FlurryConstant;
 import net.monoboy.core.FlurryHttpClient;
-import net.monoboy.core.HttpClient;
+import net.monoboy.core.GlobalHolder;
 
 import com.flurry.android.FlurryAgent;
 import com.googlecode.androidannotations.annotations.AfterViews;
@@ -33,6 +33,8 @@ public class MainActivity extends BaseActivity {
 		FlurryAgent.setUseHttps(true);
 		FlurryAgent.setReportLocation(false);
 		FlurryAgent.onStartSession(this, FlurryConstant.FLURRY_LOGGING_API_KEY);
+		
+		GlobalHolder.init(this.getApplicationContext());
 	}
 
 	@Override

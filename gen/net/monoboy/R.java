@@ -9,6 +9,22 @@ package net.monoboy;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int date=0x7f010000;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int value=0x7f010001;
     }
     public static final class drawable {
         public static final int cgh=0x7f020000;
@@ -36,4 +52,49 @@ public final class R {
         public static final int Theme_CustomDialog=0x7f060001;
         public static final int Theme_Transparent=0x7f060000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a day.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #day_date net.monoboy:date}</code></td><td></td></tr>
+           <tr><td><code>{@link #day_value net.monoboy:value}</code></td><td></td></tr>
+           </table>
+           @see #day_date
+           @see #day_value
+         */
+        public static final int[] day = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link net.monoboy.R.attr#date}
+          attribute's value can be found in the {@link #day} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:date
+        */
+        public static final int day_date = 0;
+        /**
+          <p>This symbol is the offset where the {@link net.monoboy.R.attr#value}
+          attribute's value can be found in the {@link #day} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:value
+        */
+        public static final int day_value = 1;
+    };
 }
