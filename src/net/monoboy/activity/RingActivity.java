@@ -65,13 +65,7 @@ public class RingActivity extends BaseActivity {
 		incomingInfoTextView.setText(incomingPhoneNumber);
 		
 	    myVideoView.setMediaController(new MediaController(this));
-
-		myVideoView.setOnPreparedListener(new OnPreparedListener() {
-		    @Override
-		    public void onPrepared(MediaPlayer mp) {
-		    	mp.setLooping(true);
-		    }
-		});
+		myVideoView.setOnPreparedListener(new MainPreparedListner());
 		
 		myVideoView.requestFocus();
 		myVideoView.start();
@@ -90,5 +84,12 @@ public class RingActivity extends BaseActivity {
 		final IncomingCallInfoDialog incomingCallInfoDialog = new IncomingCallInfoDialog();
 		
 		incomingCallInfoDialog.show(this.getFragmentManager(), null);
+	}
+	
+	private class MainPreparedListner implements OnPreparedListener {
+		@Override
+		public void onPrepared(MediaPlayer mp) {
+			mp.setLooping(true);
+		}
 	}
 }
