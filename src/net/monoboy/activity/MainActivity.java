@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         
         Log.d("vier", "onCreate");
-        FlurryHttpClient.getActiveUser(null, null);
+        //FlurryHttpClient.getActiveUser(null, null);
     }
     
 	@Override

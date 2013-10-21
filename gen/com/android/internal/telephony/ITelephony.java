@@ -1,6 +1,8 @@
+/*___Generated_by_IDEA___*/
+
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /home1/myBell/src/com/android/internal/telephony/ITelephony.aidl
+ * Original file: /Users/nohono/Desktop/repo/myBellWithAA/src/com/android/internal/telephony/ITelephony.aidl
  */
 package com.android.internal.telephony;
 public interface ITelephony extends android.os.IInterface
